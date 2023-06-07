@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mixlr.panos.fragmentsdemo.databinding.FragmentDashboardBinding
@@ -31,6 +32,9 @@ class DashboardFragment : Fragment() {
         val textView: TextView = binding.textDashboard
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        binding.btnTest.setOnClickListener {
+            Toast.makeText(activity, "Clicked", Toast.LENGTH_LONG).show()
         }
         return root
     }
